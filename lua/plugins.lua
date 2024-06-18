@@ -12,8 +12,16 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  {'navarasu/onedark.nvim',
+  init = function()
+    vim.cmd.colorscheme 'onedark'
+  end,
+},
 
-  'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' }
-
+    require 'plugin_config/lualine',
+    require 'plugin_config/telescope',
+    require 'plugin_config/treesitter',
+     require 'plugin_config/which-key',
+     require 'plugin_config/mason',
+     require 'plugin_config/lspconfig',
 })
