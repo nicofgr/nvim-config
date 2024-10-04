@@ -26,4 +26,5 @@ require("lazy").setup({
      require 'plugin_config/lspconfig',
     require 'plugin_config/LuaSnip',
     require 'plugin_config/cmp',
+    require 'plugin_config/vimtex',
 })
