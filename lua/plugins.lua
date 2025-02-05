@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    'tpope/vim-sleuth',
   {'navarasu/onedark.nvim',
   init = function()
     vim.cmd.colorscheme 'onedark'
