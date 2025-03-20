@@ -28,4 +28,5 @@ require("lazy").setup({
     require 'plugin_config/LuaSnip',
     require 'plugin_config/cmp',  -- Autocomplete
     require 'plugin_config/vimtex',
+    require 'plugin_config/nvim-tree',
 })
