@@ -20,6 +20,12 @@ return {
       require("lspconfig").clangd.setup{}
       require("lspconfig").lua_ls.setup{}
       require("lspconfig").texlab.setup{}
+
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities.textDocument.completion.completionItem.snippetSupport = true
+      require("lspconfig").html.setup{
+        capabilities = capabilities,
+      }
     end,
   },
 }
