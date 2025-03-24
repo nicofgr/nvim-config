@@ -10,7 +10,7 @@ return{
       local wk = require("which-key")
       wk.add({
         { "<leader>f", group = "file" },
-        {"<leader>y", "<cmd>NvimTreeToggle<cr>", desc = "File Explorer"},
+        {"<leader>n", "<cmd>NvimTreeToggle<cr>", desc = "File Explorer"},
       })
 
 
@@ -25,6 +25,7 @@ return{
         api.config.mappings.default_on_attach(bufnr)
 
         -- custom mappings
+        --vim.keymap.set('n', '<C-h>', api.tree.change_root_to_parent,        opts('Down'))
         --vim.keymap.set('n', '<C-h>', api.tree.change_root_to_parent,        opts('Down'))
         --vim.keymap.set('n', '?',     api.tree.toggle_help,                  opts('Help'))
       end
