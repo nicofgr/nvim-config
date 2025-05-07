@@ -16,6 +16,13 @@ vim.diagnostic.config({
   },
 })
 
+vim.filetype.add {
+  extension = {
+    vert = "glsl",
+    frag = "glsl",
+  },
+}
+
 require("keymaps")
 require("plugins")
 --require("plugin_config")
