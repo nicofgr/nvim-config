@@ -1,16 +1,20 @@
 return {
-  {
-    "williamboman/mason.nvim",
+    {
+    "mason-org/mason.nvim",
+    build = ":MasonUpdate",  -- ensures language servers can update
+    cmd = { "Mason" },       -- makes :Mason available
     config = function()
       require("mason").setup()
     end,
   },
   {
-    "williamboman/mason-lspconfig.nvim",
+    "mason-org/mason-lspconfig.nvim",
+    dependencies = { "mason-org/mason.nvim" },
+    event = "VeryLazy",
+
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = { "clangd", "bashls", "cssls", "html", "texlab", "glsl_analyzer", "phpactor", "lua_ls"},
-        automatic_instalattion = true,
       })
     end,
   },
@@ -27,6 +31,7 @@ return {
         capabilities = capabilities,
       }
     end,
+
   },
 }
 

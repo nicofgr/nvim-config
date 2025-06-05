@@ -5,6 +5,9 @@ vim.g.loaded_netrwPlugin = 1
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
 
+vim.opt.spelllang = {'en_us', 'pt_br'}
+vim.opt.spell = true
+
 vim.diagnostic.config({
   signs = {
     text = {

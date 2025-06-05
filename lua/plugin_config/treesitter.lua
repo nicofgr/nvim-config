@@ -6,14 +6,14 @@ return {
     config = function()
       require'nvim-treesitter.configs'.setup {
         -- A list of parser names, or "all" (the listed parsers MUST always be installed)
-        ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "cpp", "css", "html", "make", "php", "bash", "asm", "javascript", "glsl" }, --needed to remove latex
+        ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "cpp", "css", "html", "make", "php", "bash", "asm", "javascript", "glsl"}, -- Use Vimtex for latex highlight
 
         -- Install parsers synchronously (only applied to `ensure_installed`)
         sync_install = false,
 
         -- Automatically install missing parsers when entering buffer
         -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-        auto_install = true,
+        auto_install = false,
 
         -- List of parsers to ignore installing (or "all")
         --ignore_install = { "javascript" },
@@ -45,7 +45,8 @@ return {
           --additional_vim_regex_highlighting = false,
         },
       }
-
+      vim.treesitter.language.register('glsl','vert')
+      vim.treesitter.language.register('glsl','frag')
 
     end,
   },
